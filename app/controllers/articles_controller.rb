@@ -11,18 +11,18 @@ class ArticlesController < ApplicationController
 
   end
 
-	def create
+    def create
+      @article = Article.new(article_params)
+      @article.user = current_user
+      if @article.save
+        flash[:success] = "Article was successfully created"
+        redirect_to article_path(@article)
+      else
+        render 'new'
+      end
+    end
 
-		@article = Article.new(article_params)
-		if @article.save
-			flash[:success] = "Article was created"
-			redirect_to article_path(@article)
-		else
-			render 'new'
-		end
-  end
-
-  def update
+    def update
     if @article.update(article_params)
       flash[:danger] = "Article was updated"
       redirect_to article_path(@article)
