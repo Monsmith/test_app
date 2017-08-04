@@ -11,6 +11,15 @@
       <div class="article-body">
 
         <%= truncate(article.description, length:100) %>
+        <div class="article-meta-details">
+
+          <small>Created by: <%= article.user.username if article.user%>
+
+
+
+           </small>
+
+        </div>
 
       </div>
       <div class="article-actions">
