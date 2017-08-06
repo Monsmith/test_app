@@ -13,6 +13,6 @@ get 'about', to:'welcome#about'
 
   get 'signup', to: 'users#new'
 
-  resources :users, except: [:new]
+  resources :users, except:[:new]
 
 end
