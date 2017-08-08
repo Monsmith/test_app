@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1 align="center">Welcome to <%= @user.username%>'s page</h1>
+<div class="row">
+  <div align="center" >
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <%= gravatar_tag @user.email, :size => 220 %>
+  </div>
+</div>
+<h2 align="center"><%= @user.username%>'s articles</h2>
+<%= render 'articles/article', obj: @user.articles %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

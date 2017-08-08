@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'bcrypt', platforms: :ruby
+gem 'devise'
+gem 'gravatarify', '~> 3.0.0'
 #gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 #gem 'bcrypt', '~> 3.1.7' ตัวปัญหา
 # Use Puma as the app server
